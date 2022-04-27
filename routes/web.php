@@ -23,3 +23,8 @@ Route::get('/', [
     'as' => 'home',
     'uses' => 'PagesController@home'
 ]);
+
+Route::get('/tasks', [
+    'as' => 'tasks.index',
+    'uses' => 'TasksController@index'
+]);

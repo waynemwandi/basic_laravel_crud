@@ -8,7 +8,7 @@
         explicabo, iusto sequi.</p>
     <hr>
 
-    <a href="" class="btn btn-info">View Tasks</a>
+    <a href="{{ route('tasks.index') }}" class="btn btn-info">View Tasks</a>
     <a href="" class="btn btn-primary">Add New Task</a>
 
     {{-- {{ route('tasks.index') }} --}}
