@@ -28,3 +28,13 @@ Route::get('/tasks', [
     'as' => 'tasks.index',
     'uses' => 'TasksController@index'
 ]);
+
+Route::get('/create', [
+    'as' => 'tasks.create',
+    'uses' => 'TasksController@create'
+]);
+
+Route::post('/store', [
+    'as' => 'tasks.store',
+    'uses' => 'TasksController@store'
+]);

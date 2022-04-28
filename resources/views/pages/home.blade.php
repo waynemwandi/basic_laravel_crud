@@ -9,8 +9,5 @@
     <hr>
 
     <a href="{{ route('tasks.index') }}" class="btn btn-info">View Tasks</a>
-    <a href="" class="btn btn-primary">Add New Task</a>
-
-    {{-- {{ route('tasks.index') }} --}}
-    {{-- {{ route('tasks.create') }} --}}
+    <a href="{{ route('tasks.create') }}" class="btn btn-primary">Add New Task</a>
 @stop

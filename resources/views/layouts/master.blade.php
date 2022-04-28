@@ -7,7 +7,6 @@
     <title>Tasks</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/gif" sizes="16x16">
-    {{-- ../public/favicon.png --}}
 
 </head>
 
