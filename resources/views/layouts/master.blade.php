@@ -1,33 +1,38 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tasks</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="icon" href="{{ asset('favicon.png') }}" type="image/gif" sizes="16x16">
+    {{-- ../public/favicon.png --}}
 
 </head>
+
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{{ route('home') }}">Tasks</a>
-    </div>
-    <div class="nav navbar-nav navbar-right">
-        <li><a href="{{ route('home') }}">Home</a></li>
-        <li><a href="{{ route('tasks.index') }}">Tasks</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-        
-    </div>
-  </div>
-</nav>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ route('home') }}">Tasks</a>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('tasks.index') }}">Tasks</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
-<main>
-    <div class="container">
-        @yield('content')
-    </div>
-</main>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            @yield('content')
+        </div>
+    </main>
 
 </body>
+
 </html>
