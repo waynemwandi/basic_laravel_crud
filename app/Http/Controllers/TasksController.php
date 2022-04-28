@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TasksController extends Controller
 {
@@ -34,7 +35,13 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
+        $input = $request->all();
+
+        Task::create($input);
+
+        return redirect()->back();
+       
     }
 
     /**
