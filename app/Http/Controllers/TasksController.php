@@ -15,7 +15,10 @@ class TasksController extends Controller
      */
     public function index()
     {
-        return view('tasks.index');
+
+        $tasks = Task::all();
+
+        return view('tasks.index')->withTasks($tasks);
     }
 
     /**
@@ -64,7 +67,11 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        //
+        $task = Task::findOrFail($id);
+
+        return view('tasks.show')->withTask($task);
+
+        // return view('tasks.show');
     }
 
     /**

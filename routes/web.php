@@ -38,3 +38,12 @@ Route::post('/store', [
     'as' => 'tasks.store',
     'uses' => 'TasksController@store'
 ]);
+
+Route::get('/show/{id}', [
+    'as' => 'tasks.show',
+    'uses' => 'TasksController@show',
+]);
+
+// Route::get('/user/{id}', function ($id) {
+//     return 'User '.$id;
+// });
