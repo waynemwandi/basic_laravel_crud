@@ -55,6 +55,8 @@ Route::put('/update/{id}', [
     'uses' => 'TasksController@update',
 ]);
 
-// Route::post('update/{id}', function ($id) {
-//     TasksController::class
-// });
+Route::delete('/destroy/{id}', [
+    'as' => 'tasks.destroy',
+    'uses' => 'TasksController@destroy',
+]);
+

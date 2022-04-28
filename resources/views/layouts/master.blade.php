@@ -27,10 +27,16 @@
     </nav>
 
     <main>
-        <div class="container">
-            @yield('content')
-        </div>
-    </main>
+      <div class="container">
+          @if(Session::has('flash_message'))
+              <div class="alert alert-success">
+                  {{ Session::get('flash_message') }}
+              </div>
+          @endif
+          
+          @yield('content')
+      </div>
+  </main>
 
 </body>
 

@@ -101,9 +101,9 @@ class TasksController extends Controller
             'description' => 'required'
         ]);
 
-        $input = $request->all();
+        // $input = $request->all();
 
-        $task->fill($input)->save();
+        $task->fill($request->input())->save();
 
         Session::flash('flash_message', 'Task successfully added!');
 
@@ -118,6 +118,12 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Task::findOrFail($id);
+
+        $task->delete();
+
+        Session::flash('flash_message', 'Task successfully deleted!');
+
+        return redirect()->route('tasks.index');
     }
 }
