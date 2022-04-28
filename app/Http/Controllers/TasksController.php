@@ -56,7 +56,6 @@ class TasksController extends Controller
 
 
         return redirect()->back();
-       
     }
 
     /**
@@ -70,8 +69,6 @@ class TasksController extends Controller
         $task = Task::findOrFail($id);
 
         return view('tasks.show')->withTask($task);
-
-        // return view('tasks.show');
     }
 
     /**
@@ -82,7 +79,10 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $task = Task::findOrFail($id);
+
+        return view('tasks.edit')->withTask($task);
     }
 
     /**
@@ -94,7 +94,20 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = Task::findOrFail($id);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $task->fill($input)->save();
+
+        Session::flash('flash_message', 'Task successfully added!');
+
+        return redirect()->back();
     }
 
     /**

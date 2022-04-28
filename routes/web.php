@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\TasksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,16 @@ Route::get('/show/{id}', [
     'uses' => 'TasksController@show',
 ]);
 
-// Route::get('/user/{id}', function ($id) {
-//     return 'User '.$id;
+Route::get('/edit/{id}', [
+    'as' => 'tasks.edit',
+    'uses' => 'TasksController@edit',
+]);
+
+Route::put('/update/{id}', [
+    'as' => 'tasks.update',
+    'uses' => 'TasksController@update',
+]);
+
+// Route::post('update/{id}', function ($id) {
+//     TasksController::class
 // });
