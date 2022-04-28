@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use Illuminate\Support\Facades\Session;
 
 class TasksController extends Controller
 {
@@ -36,9 +37,20 @@ class TasksController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+
         $input = $request->all();
 
         Task::create($input);
+
+
+        Session::flash('flash_message', 'Task successfully added!');
+
 
         return redirect()->back();
        
